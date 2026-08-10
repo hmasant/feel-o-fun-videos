@@ -1,8 +1,11 @@
+import data from "../data/videos.json";
 import { Container } from "@mui/material";
 import { useParams } from "react-router-dom";
 
 export default function VideoScreen() {
-  const { title } = useParams();
+  const { id } = useParams();
+
+  const video = data.find((e) => e.id === id);
 
   return (
     <Container
@@ -15,7 +18,7 @@ export default function VideoScreen() {
       }}
     >
       <video style={{ borderRadius: "10px" }} width="100%" controls loop>
-        <source src={`/${title}.mp4`} type="video/mp4" />
+        <source src={`/${video?.title}.mp4`} type="video/mp4" />
         Your browser does not support HTML video.
       </video>
     </Container>

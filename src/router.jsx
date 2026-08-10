@@ -9,7 +9,7 @@ export const Router = () => {
     <Suspense>
       <Routes>
         <Route index element={<HomeScreen />} />
-        <Route path="/video/:title" element={<VideoScreen />} />
+        <Route path="/video/:id" element={<VideoScreen />} />
       </Routes>
     </Suspense>
   );
